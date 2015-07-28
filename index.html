@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+	<meta charset="UTF-8">
+	<title>Cat Clicker Premium</title>
+	<link rel="stylesheet" href"style.css">
+
+
+
+</head>
+
+<body>
+
+	<ul data-bind="foreach: catList">
+		<li data-bind="text: name, click: $parent.setCat"></li>
+	</ul>
+
+	<div id="mainCat" data-bind="with:currentCat">
+		<h2 id="name" data-bind="text: name"></h2>
+		<h3 id="title" data-bind="text: title"></h3>
+		<div id="counter" data-bind="text: clickCount"></div>
+		<img src="" alt="cute cat blank" data-bind="click: $parent.incrementCounter, attr: {src: imgSrc}">
+
+		<div>
+			<h3>Nicknames:</h3>
+			<ul data-bind="foreach: nicknames">
+				<li data-bind="text: $data"></li>
+			</ul>
+		</div>
+	</div>
+
+
+
+	<script src="jquery.js"></script>
+	<script src="knockout.js"></script>
+	<script src="app.js"></script>
+
+</body>
+
+
+</html>
